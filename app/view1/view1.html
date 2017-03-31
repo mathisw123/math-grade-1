@@ -1,0 +1,23 @@
+
+
+<div class="center">
+    <p>10以内加减法.</p>
+    <div>
+        you have answered {{correctAmt}} question(s) correctly.
+        <br>
+        you have answered {{wrongAmt}} question(s) wrong.
+
+
+    </div>
+    <div style="font-size: 30px;color:red; align-content: center ">
+        {{error}}
+    </div>
+
+    <div style="font-size: 50px;">
+        {{ num1 }} {{operator}} {{num2}} = <input id="result" type="number" ng-model="result" size="5" autofocus/> &nbsp;&nbsp;&nbsp;
+        <input type="button" ng-click="checkResult()" value="提交"/>
+
+    </div>
+
+
+</div>
