@@ -11,4 +11,15 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+}]).directive('myEnter', function () {
+    return function (scope, element, attrs){
+      element.bind('keydown, keypress', function(event){
+        if(event.which === 13){
+          scope.$apply(function(){
+            scope.$eval(attrs.myEnter);
+          });
+          event.preventDefault();
+        }
+      })
+    }
+});

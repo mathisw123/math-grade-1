@@ -14,6 +14,13 @@ angular.module('myApp.view1', ['ngRoute']).run(function ($rootScope) {
 
 .controller('View1Ctrl', ['$scope','$route','$rootScope','$window',function($scope,$route,$rootScope,$window) {
 
+    $scope.onFolderNumberKeyPress = function(event)
+    {
+        if (event.charCode == 13) {
+            $scope.checkResult();
+        }
+    }
+
     var num1, num2;
 
     num1 = Math.floor(Math.random() * 10);

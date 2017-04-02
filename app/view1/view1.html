@@ -3,9 +3,9 @@
 <div class="center">
     <p>10以内加减法.</p>
     <div>
-        you have answered {{correctAmt}} question(s) correctly.
+        you have answered <span style="color:green;font-size: 10px"> {{correctAmt}} </span>question(s) correctly.
         <br>
-        you have answered {{wrongAmt}} question(s) wrong.
+        you have answered <span style="color:red; font-size: 100px;">  {{wrongAmt}} </span>question(s) wrong.
 
 
     </div>
@@ -14,7 +14,9 @@
     </div>
 
     <div style="font-size: 50px;">
-        {{ num1 }} {{operator}} {{num2}} = <input id="result" type="number" ng-model="result" size="5" autofocus/> &nbsp;&nbsp;&nbsp;
+        {{ num1 }} {{operator}} {{num2}} =
+        <input id="result" type="number" ng-model="result" ng-maxlength="1" size="2" data-ng-keypress="onFolderNumberKeyPress($event)" />
+        &nbsp;&nbsp;&nbsp;
         <input type="button" ng-click="checkResult()" value="提交"/>
 
     </div>
