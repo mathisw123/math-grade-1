@@ -1,22 +1,33 @@
 
 
 <div class="center">
-    <p>10以内加减法.</p>
-    <div>
-         <span style="color:green;font-size: 100px"> {{correctAmt}} </span> correct VS
 
-         <span style="color:red; font-size: 80px;">  {{wrongAmt}} </span> wrong
+    <div class="wrapper">
+        <div class="float left">
+             <span style="color:green;font-size: 100px"> {{correctAmt}} </span> correct VS
+
+             <span style="color:red; font-size: 80px;">  {{wrongAmt}} </span> wrong
 
 
+        </div>
+        <div class="float right">
+            <div ng-repeat="n in wrongAnswers track by $index">
+                {{n}}<BR/>
+            </div>
+        </div>
     </div>
     <div style="font-size: 30px;color:red; align-content: center ">
         {{error}}
     </div>
 
+
     <div style="font-size: 50px;">
-        {{ num1 }} {{operator}} {{num2}} =
-        <input id="result" type="number" ng-model="result" ng-maxlength="1" size="2"
-               data-ng-keypress="onFolderNumberKeyPress($event)" />
+        {{ data.num1 }} {{data.operator}} {{ data.num2}} =
+        <input id="result" type="text" ng-model="data.result" data-ng-maxlength="2" size="2"
+               ng-pattern="/^\d+$/"
+        data-ng-keypress="onFolderNumberKeyPress($event)"
+        />
+
         &nbsp;&nbsp;&nbsp;
         <input type="button" ng-click="checkResult()" value="提交"/>
 

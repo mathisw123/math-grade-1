@@ -31,7 +31,7 @@
   padding: 10px;
 }
 
-.wrapper {width:1000px; height:300px; position:relative;}
+.wrapper {width:1000px; height:180px; position:relative;}
 .float {height:auto; margin:0; padding:0;}
 .left {background-color:white;position: absolute;  width:400px;}
 .right {float:right; width:100px;color:red}
